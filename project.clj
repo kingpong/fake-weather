@@ -5,6 +5,7 @@
   :plugins [[lein-ring "0.12.4"]]
   :source-paths ["src" "scratch"]
   :dependencies [[org.clojure/clojure "1.9.0"]
+                 [org.clojure/tools.logging "0.4.1"]
                  [clj-time "0.14.2"]
                  [commons-codec "1.10"]
                  [metosin/compojure-api "2.0.0-alpha18"]

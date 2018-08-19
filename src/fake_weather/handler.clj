@@ -1,5 +1,5 @@
 (ns fake-weather.handler
-  (:require [compojure.api.sweet :refer [api GET]]
+  (:require [compojure.api.sweet :refer [api GET undocumented]]
             [compojure.response :as response]
             [compojure.route :as route]
             [fake-weather.weather :as weather]
@@ -32,8 +32,9 @@
       (after-random-delay 250
         {:status 200 :body (weather/forecast zipcode)}))
 
-    (route/not-found
-      {:body {:message "not-found"}})))
+    (undocumented
+      (route/not-found
+        {:body {:message "not-found"}}))))
 
 (def app (-> app*
              (ring.middleware.json/wrap-json-response)))
